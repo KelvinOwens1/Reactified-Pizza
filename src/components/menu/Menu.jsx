@@ -1,3 +1,5 @@
+import React from 'react';
+import Pizza from '../pizza/Pizza';
 
 const pizzaData = [
   {
@@ -37,9 +39,23 @@ const pizzaData = [
   },
   {
     name: "Pizza Prosciutto",
-    ingredients: "Tomato, mozarella, ham, aragula, and burrata cheese",
+    ingredients: "Tomato, mozarella, ham, arugula, and burrata cheese",
     price: 18,
     photoName: "pizzas/prosciutto.jpg",
     soldOut: false,
   },
 ];
+
+function Menu() {
+  return (
+    <div className="menu">
+      <ul className="pizzas">
+        {pizzaData.map((pizza, index) => (
+          <Pizza key={index} pizza={pizza} />
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+export default Menu;
